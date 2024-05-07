@@ -1,10 +1,12 @@
-import MenubarDemo from "../components/Header";
+import LogTable from "@/components/LogTable";
+import DefaultLayout from "@/components/layouts/DefaultLayout";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <MenubarDemo />
-    </div>
+    <DefaultLayout>
+      <div style={{ display: "flex" }}>
+        <LogTable />
+      </div>
+    </DefaultLayout>
   );
 }
