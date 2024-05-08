@@ -15,8 +15,6 @@ import { JSX, SVGProps } from "react";
 import { useRouter } from "next/navigation";
 import { signOut } from "aws-amplify/auth";
 
-//import { Package2Icon, MenuIcon, CircleUserIcon, SearchIcon } from '@/components/icons'; // Make sure to have these icons properly imported or defined.
-
 const Header = () => {
   const router = useRouter(); // Get the useRouter hook from next/navigation
 
@@ -39,20 +37,20 @@ const Header = () => {
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
-            href="#"
+            href="/"
           >
             <Package2Icon className="h-6 w-6" />
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
             className="text-muted-foreground transition-colors hover:text-foreground"
-            href="#"
+            href="/maintenance"
           >
             Dashboard
           </Link>
           <Link
             className="text-muted-foreground transition-colors hover:text-foreground"
-            href="#"
+            href="/maintenance/new"
           >
             Maintenance Entry
           </Link>
