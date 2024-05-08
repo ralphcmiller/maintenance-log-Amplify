@@ -1,12 +1,5 @@
-import LogTable from "@/components/LogTable";
-import DefaultLayout from "@/components/layouts/DefaultLayout";
+import { HomePage } from "@/components/HomePage";
 
 export default function Home() {
-  return (
-    <DefaultLayout>
-      <div style={{ display: "" }}>
-        <LogTable />
-      </div>
-    </DefaultLayout>
-  );
+  return <HomePage />;
 }

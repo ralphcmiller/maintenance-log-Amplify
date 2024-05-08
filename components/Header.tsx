@@ -12,9 +12,27 @@ import {
   DropdownMenu,
 } from "@/components/ui/dropdown-menu";
 import { JSX, SVGProps } from "react";
+import { useRouter } from "next/navigation";
+import { signOut } from "aws-amplify/auth";
+
 //import { Package2Icon, MenuIcon, CircleUserIcon, SearchIcon } from '@/components/icons'; // Make sure to have these icons properly imported or defined.
 
 const Header = () => {
+  const router = useRouter(); // Get the useRouter hook from next/navigation
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      router.push("/"); // Navigate to home page after sign out
+    } catch (error) {
+      console.log("Error signing out: ", error);
+    }
+  };
+
+  const navigateTo = (path: string): void => {
+    router.push(path);
+  };
+
   return (
     <div key="1" className="flex w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -36,25 +54,7 @@ const Header = () => {
             className="text-muted-foreground transition-colors hover:text-foreground"
             href="#"
           >
-            Orders
-          </Link>
-          <Link
-            className="text-muted-foreground transition-colors hover:text-foreground"
-            href="#"
-          >
-            Products
-          </Link>
-          <Link
-            className="text-muted-foreground transition-colors hover:text-foreground"
-            href="#"
-          >
-            Customers
-          </Link>
-          <Link
-            className="text-foreground transition-colors hover:text-foreground"
-            href="#"
-          >
-            Settings
+            Maintenance Entry
           </Link>
         </nav>
         <Sheet>
@@ -87,22 +87,7 @@ const Header = () => {
                 className="text-muted-foreground hover:text-foreground"
                 href="#"
               >
-                Orders
-              </Link>
-              <Link
-                className="text-muted-foreground hover:text-foreground"
-                href="#"
-              >
-                Products
-              </Link>
-              <Link
-                className="text-muted-foreground hover:text-foreground"
-                href="#"
-              >
-                Customers
-              </Link>
-              <Link className="hover:text-foreground" href="#">
-                Settings
+                Maintenance Entry
               </Link>
             </nav>
           </SheetContent>
@@ -113,7 +98,7 @@ const Header = () => {
               <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-                placeholder="Search products..."
+                placeholder="Search logs..."
                 type="search"
               />
             </div>
@@ -126,12 +111,18 @@ const Header = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>Username</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => navigateTo("/settings")}>
+                Settings
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => navigateTo("/support")}>
+                Support
+              </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleSignOut}>
+                Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
