@@ -45,21 +45,22 @@ export function HomePage() {
             <CalendarIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <h3 className="text-xl font-bold">Log Maintenance</h3>
             <p className="max-w-[300px] text-gray-500 dark:text-gray-400">
-              Keep track of all your vehicle's maintenance records in one place.
+              Keep track of all your vehicle&apos;s maintenance records in one
+              place.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <ListIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <h3 className="text-xl font-bold">View History</h3>
             <p className="max-w-[300px] text-gray-500 dark:text-gray-400">
-              Access your vehicle's complete service history at any time.
+              Access your vehicle&apos;s complete service history at any time.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <DollarSignIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <h3 className="text-xl font-bold">View Cost History</h3>
             <p className="max-w-[300px] text-gray-500 dark:text-gray-400">
-              Review the costs of all your vehicle's maintenance over time.
+              Review the costs of all your vehicle&apos;s maintenance over time.
             </p>
           </div>
         </div>
