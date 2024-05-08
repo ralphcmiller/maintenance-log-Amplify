@@ -11,7 +11,7 @@ export function HomePage() {
               Maintenance Log
             </h1>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Easily track your vehicle's service history, perfect for car
+              Easily track your vehicle&apos;s service history, perfect for car
               enthusiasts who handle their own maintenance.
             </p>
             <div className="flex items-center gap-4">
