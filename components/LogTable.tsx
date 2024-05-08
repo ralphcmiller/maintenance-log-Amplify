@@ -50,7 +50,7 @@ const LogTable = () => {
       <CardHeader>
         <h1 className="text-2xl font-bold">Vehicle Maintenance</h1>
         <p className="text-gray-500">
-          Track your vehicle's mileage, costs, and maintenance tasks.
+          Track your vehicle&apos;s mileage, costs, and maintenance tasks.
         </p>
       </CardHeader>
       <CardContent>
