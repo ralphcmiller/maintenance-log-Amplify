@@ -20,8 +20,8 @@ const Header = () => {
 
   const handleSignOut = async () => {
     try {
-      await signOut();
       router.push("/"); // Navigate to home page after sign out
+      await signOut();
     } catch (error) {
       console.log("Error signing out: ", error);
     }
